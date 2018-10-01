@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+</head>
+<body>
+    Nível de conversa (0 a 10):
+    <input type="number" id="conversa"> <br>
+    Quantos livros já leu:
+    <input type="number" id="livros"> <br>
+    Quantos jogos ja jogou:
+    <input type="number" id="jogos"> <br>
+    Quantos namorados ou ficantes ja teve:
+    <input type="number" id="namorados"> <br>
+    <button class="btn" onclick="btn()">Perfil</button><br>
+
+    <p>Boa de conversa? <span id="r1"></span></p>
+    <p>Culta? <span id="r2"></span></p>
+    <p>Curte um videogame? <span id="r3"></span></p>
+    <p>Difícil de conquistar? <span id="r4"></span></p>
+    <p>Boa de conversa e culta? <span id="r5"></span></p>
+    <p>Boa de conversa e curte um videogame? <span id="r6"></span></p>
+    <p>Não é culta e ainda é difícil? <span id="r7"></span></p>
+    <p>Veredito: Para eu marcar um encontro deve ser boa de conversa,
+        culta mas não difícil de conquistar
+        e curtir um videogame. É o caso? <span id="r8"></span></p>
+
+    <script>
+        function btn() {
+            let conversa = parseInt(document.getElementById("conversa").value);
+            let livros = parseInt(document.getElementById("livros").value);
+            let jogos = parseInt(document.getElementById("jogos").value);
+            let namorados = parseInt(document.getElementById("namorados").value);
+            let boaConversa = false;
+            let culta = false;
+            let gamer = false;
+            let dificil = false;
+            
+            if((conversa>=0 && conversa<=10) && livros>=0 && jogos>=0 && namorados>=0) {
+                if(conversa>5)
+                    boaConversa = true;
+                if(livros>9)
+                    culta = true;
+                if(jogos>9)
+                    gamer = true;
+                if(namorados<3) 
+                    dificil = true;
+                respostas();
+            } else
+                alert("ERRO");
+            
+            function respostas() {
+                if(boaConversa==true)
+                    document.getElementById("r1").innerHTML = "SIM";
+                else if(boaConversa==false)
+                    document.getElementById("r1").innerHTML = "NÃO";
+                if(culta==true)
+                    document.getElementById("r2").innerHTML = "SIM";
+                else if(culta==false)
+                    document.getElementById("r2").innerHTML = "NÃO";
+                if(gamer==true)
+                    document.getElementById("r3").innerHTML = "SIM";
+                else if(gamer==false)
+                    document.getElementById("r3").innerHTML = "NÃO";
+                if(dificil==true)
+                    document.getElementById("r4").innerHTML = "SIM";
+                else if(dificil==false)
+                    document.getElementById("r4").innerHTML = "NÃO";
+                if(boaConversa==true && culta==true)
+                    document.getElementById("r5").innerHTML = "SIM";
+                else
+                    document.getElementById("r5").innerHTML = "NÃO";     
+                if(boaConversa==true && gamer==true)
+                    document.getElementById("r6").innerHTML = "SIM";
+                else
+                    document.getElementById("r6").innerHTML = "NÃO";   
+                if(culta==false && dificil==true)
+                    document.getElementById("r7").innerHTML = "SIM";
+                else
+                    document.getElementById("r7").innerHTML = "NÃO";   
+                if(boaConversa==true && culta==true && dificil==false &&gamer==true) 
+                    document.getElementById("r8").innerHTML = "SIM";
+                else
+                    document.getElementById("r8").innerHTML = "NÃO";    
+            }          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-color:#05464F;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Baloo Bhai', cursive;
+    letter-spacing: 1px;
+}
+
+.btn {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top:80px;
+    margin-bottom: 60px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Baloo Bhai', cursive;
+    letter-spacing: 1.5px;
+    border-radius: 3px;
+}
